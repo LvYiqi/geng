@@ -25,6 +25,14 @@ int main()
             }
         }
     }
-    printfFILE();
+    FILE *f=fopen("VNetFlow.txt","w");
+    fprintf(f,"%d\n",vnum);
+    for(i=0;i<vnum;i++)
+        fprintf(f,"%d\n",vcap[i]);
+    for(i=0;i<vnum;i++){
+        for(j=0;j<vnum;j++)
+            fprintf(f,"%d ",map[i][j]);
+        fprintf(f,"\n");
+    }
     return 0;
 }

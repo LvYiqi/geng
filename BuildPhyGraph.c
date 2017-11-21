@@ -36,6 +36,11 @@ int main()
         e[i].v2=temp;
         map[e[i].v1][temp]=e[i].eprice;
     }
-    printfFILE();
+    FILE *f=fopen("PhyGragh.txt","w");
+    fprintf(f,"%d %d\n",VNUM,ENUM);
+    for(i=0;i<VNUM;i++)
+        fprintf(f,"%d %d\n",vcap[i],vprice[i]);
+    for(i=0;i<ENUM;i++)
+        fprintf(f,"%d %d %d %d\n",e[i].ecap,e[i].eprice,e[i].v1,e[i].v2);
     return 0;
 }
